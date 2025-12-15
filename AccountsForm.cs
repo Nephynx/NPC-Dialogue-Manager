@@ -54,5 +54,10 @@ namespace NPCDialogueManager.App
         {
             RefreshGrid();
         }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
