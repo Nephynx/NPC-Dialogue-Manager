@@ -1,20 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using NPCDialogueManager.Core.Services;
+using NPCDialogueManager.Data.Repositories;
 
-namespace NPC_Dialogue_Manager
+namespace NPCDialogueManager.App
 {
     public partial class AccountCreationForm : Form
     {
+        private readonly AuthService _auth = new AuthService(new UserRepository());
+
         public AccountCreationForm()
         {
             InitializeComponent();
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _auth.Register(tbUsername.Text.Trim(), tbPassword.Text, tbDisplayName.Text.Trim());
+                MessageBox.Show("Account created. You can log in now.");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
