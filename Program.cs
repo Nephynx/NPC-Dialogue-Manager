@@ -16,7 +16,7 @@ namespace NPC_Dialogue_Manager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginPageForm());
+            Application.Run(new HomePageForm());
         }
     }
 }
