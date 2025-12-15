@@ -1,6 +1,6 @@
 ﻿namespace NPC_Dialogue_Manager
 {
-    partial class Form1
+    partial class DialoguePlayerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // DialoguePlayerForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(1484, 611);
+            this.Name = "DialoguePlayerForm";
+            this.Text = "DialoguePlayer";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-

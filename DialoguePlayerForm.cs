@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NPC_Dialogue_Manager
 {
-    public partial class Form1 : Form
+    public partial class DialoguePlayerForm : Form
     {
-        public Form1()
+        public DialoguePlayerForm()
         {
             InitializeComponent();
         }
