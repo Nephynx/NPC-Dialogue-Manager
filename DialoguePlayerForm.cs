@@ -86,7 +86,6 @@ namespace NPCDialogueManager.App
             txtNodeText.Clear();
             lstChoices.ClearSelected();
             lblNodeId.Text = "Node Id:";
-
         }
 
         private void DialoguePlayerForm_Load_1(object sender, EventArgs e)
