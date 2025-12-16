@@ -12,6 +12,7 @@ namespace NPCDialogueManager.App
         public AccountCreationForm()
         {
             InitializeComponent();
+            tbPassword.UseSystemPasswordChar = true;
         }
 
         private void btnCreate_Click(object sender, EventArgs e)

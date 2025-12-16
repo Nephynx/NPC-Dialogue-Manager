@@ -77,7 +77,6 @@
             this.txtNodeId.ReadOnly = true;
             this.txtNodeId.Size = new System.Drawing.Size(100, 20);
             this.txtNodeId.TabIndex = 2;
-            this.txtNodeId.TextChanged += new System.EventHandler(this.txtNodeId_TextChanged);
             // 
             // txtNodeKey
             // 
@@ -85,7 +84,6 @@
             this.txtNodeKey.Name = "txtNodeKey";
             this.txtNodeKey.Size = new System.Drawing.Size(100, 20);
             this.txtNodeKey.TabIndex = 2;
-            this.txtNodeKey.TextChanged += new System.EventHandler(this.txtNodeKey_TextChanged);
             // 
             // txtNodeText
             // 

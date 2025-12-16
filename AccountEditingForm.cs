@@ -12,6 +12,7 @@ namespace NPCDialogueManager.App
         public AccountEditingForm()
         {
             InitializeComponent();
+            txtNewPassword.UseSystemPasswordChar = true;
         }
 
         private void AccountEditingForm_Load(object sender, EventArgs e)
