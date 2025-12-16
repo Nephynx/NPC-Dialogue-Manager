@@ -55,10 +55,11 @@
             // dgvLogs
             // 
             this.dgvLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLogs.Location = new System.Drawing.Point(365, 39);
+            this.dgvLogs.Location = new System.Drawing.Point(1237, 623);
             this.dgvLogs.Name = "dgvLogs";
-            this.dgvLogs.Size = new System.Drawing.Size(347, 288);
+            this.dgvLogs.Size = new System.Drawing.Size(50, 38);
             this.dgvLogs.TabIndex = 1;
+            this.dgvLogs.Visible = false;
             this.dgvLogs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLogs_CellContentClick);
             // 
             // ReportStatusForm
