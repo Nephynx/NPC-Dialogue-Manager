@@ -158,12 +158,6 @@
       <DependentUpon>ReportStatusForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SessionRepository.cs" />
-    <Compile Include="StatusReportForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StatusReportForm.Designer.cs">
-      <DependentUpon>StatusReportForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserRepository.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="VariableRepository.cs" />
@@ -203,9 +197,6 @@
     </Compile>
     <EmbeddedResource Include="ReportStatusForm.resx">
       <DependentUpon>ReportStatusForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StatusReportForm.resx">
-      <DependentUpon>StatusReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -1,5 +1,4 @@
-﻿// NPCDialogueManager.App/Forms/ReportStatusForm.cs
-using System;
+﻿using System;
 using System.Linq;
 using System.Windows.Forms;
 using NPCDialogueManager.Core.Services;
@@ -26,22 +25,27 @@ namespace NPCDialogueManager.App
             dgvLogs.AutoGenerateColumns = true;
         }
 
-        private void cboNPC_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var npc = cboNPC.SelectedItem as NPCDialogueManager.Core.Models.NPC;
-            if (npc == null) return;
-            var sessions = _report.GetSessionsForNpc(npc.Id).OrderByDescending(s => s.StartedAt).ToList();
-            dgvSessions.DataSource = sessions;
-            dgvLogs.DataSource = null;
-        }
-
-        private void dgvSessions_SelectionChanged(object sender, EventArgs e)
+        private void dgvSessions_SelectionChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvSessions.CurrentRow?.DataBoundItem is NPCDialogueManager.Core.Models.DialogueSession s)
             {
                 var logs = _report.GetSessionLogs(s.Id).OrderBy(l => l.Timestamp).ToList();
                 dgvLogs.DataSource = logs;
             }
+        }
+
+        private void dgvLogs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cboNPC_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            var npc = cboNPC.SelectedItem as NPCDialogueManager.Core.Models.NPC;
+            if (npc == null) return;
+            var sessions = _report.GetSessionsForNpc(npc.Id).OrderByDescending(s => s.StartedAt).ToList();
+            dgvSessions.DataSource = sessions;
+            dgvLogs.DataSource = null;
         }
     }
 }

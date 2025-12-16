@@ -37,7 +37,7 @@
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.lblAbout = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnAccountsForm = new System.Windows.Forms.Button();
+            this.btnAccounts = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnReports
@@ -164,20 +164,16 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnAccountsForm
+            // btnAccounts
             // 
-            this.btnAccountsForm.BackColor = System.Drawing.Color.Transparent;
-            this.btnAccountsForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAccountsForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccountsForm.Font = new System.Drawing.Font("MS UI Gothic", 20.25F);
-            this.btnAccountsForm.ForeColor = System.Drawing.Color.White;
-            this.btnAccountsForm.Location = new System.Drawing.Point(11, 416);
-            this.btnAccountsForm.Name = "btnAccountsForm";
-            this.btnAccountsForm.Size = new System.Drawing.Size(213, 63);
-            this.btnAccountsForm.TabIndex = 0;
-            this.btnAccountsForm.Text = "Accounts";
-            this.btnAccountsForm.UseVisualStyleBackColor = false;
-            this.btnAccountsForm.Click += new System.EventHandler(this.btnEditAccount_Click_1);
+            this.btnAccounts.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccounts.Location = new System.Drawing.Point(11, 416);
+            this.btnAccounts.Name = "btnAccounts";
+            this.btnAccounts.Size = new System.Drawing.Size(214, 63);
+            this.btnAccounts.TabIndex = 9;
+            this.btnAccounts.Text = "Accounts";
+            this.btnAccounts.UseVisualStyleBackColor = true;
+            this.btnAccounts.Click += new System.EventHandler(this.btnAccounts_Click_1);
             // 
             // HomePageForm
             // 
@@ -185,13 +181,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1284, 661);
+            this.Controls.Add(this.btnAccounts);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnPlayDialogue);
             this.Controls.Add(this.btnManageDialogue);
             this.Controls.Add(this.btnManageNPCs);
             this.Controls.Add(this.btnReports);
-            this.Controls.Add(this.btnAccountsForm);
             this.Controls.Add(this.btnEditAccount);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblAbout);
@@ -214,6 +210,6 @@
         private System.Windows.Forms.Button btnEditAccount;
         private System.Windows.Forms.Label lblAbout;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnAccountsForm;
+        private System.Windows.Forms.Button btnAccounts;
     }
 }

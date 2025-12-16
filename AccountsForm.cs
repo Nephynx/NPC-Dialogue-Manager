@@ -33,7 +33,7 @@ namespace NPCDialogueManager.App
             dgvAccounts.DataSource = _userRepo.GetAllActive().ToList();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click_1(object sender, EventArgs e)
         {
             if (dgvAccounts.CurrentRow?.DataBoundItem is User user)
             {
@@ -50,14 +50,9 @@ namespace NPCDialogueManager.App
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnRefresh_Click_1(object sender, EventArgs e)
         {
             RefreshGrid();
-        }
-
-        private void btnDelete_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

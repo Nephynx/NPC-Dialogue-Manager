@@ -43,6 +43,7 @@
             this.btnDeleteNode = new System.Windows.Forms.Button();
             this.btnAddEdge = new System.Windows.Forms.Button();
             this.btnDeleteEdge = new System.Windows.Forms.Button();
+            this.label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEdges)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,8 +52,9 @@
             this.cboNPC.FormattingEnabled = true;
             this.cboNPC.Location = new System.Drawing.Point(12, 12);
             this.cboNPC.Name = "cboNPC";
-            this.cboNPC.Size = new System.Drawing.Size(288, 21);
+            this.cboNPC.Size = new System.Drawing.Size(211, 21);
             this.cboNPC.TabIndex = 0;
+            this.cboNPC.SelectedIndexChanged += new System.EventHandler(this.cboNPC_SelectedIndexChanged_1);
             // 
             // lstNodes
             // 
@@ -70,6 +72,7 @@
             this.txtNodeId.ReadOnly = true;
             this.txtNodeId.Size = new System.Drawing.Size(100, 20);
             this.txtNodeId.TabIndex = 2;
+            this.txtNodeId.TextChanged += new System.EventHandler(this.txtNodeId_TextChanged);
             // 
             // txtNodeKey
             // 
@@ -77,6 +80,7 @@
             this.txtNodeKey.Name = "txtNodeKey";
             this.txtNodeKey.Size = new System.Drawing.Size(100, 20);
             this.txtNodeKey.TabIndex = 2;
+            this.txtNodeKey.TextChanged += new System.EventHandler(this.txtNodeKey_TextChanged);
             // 
             // txtNodeText
             // 
@@ -132,6 +136,7 @@
             this.btnAddNode.TabIndex = 5;
             this.btnAddNode.Text = "Add Node";
             this.btnAddNode.UseVisualStyleBackColor = true;
+            this.btnAddNode.Click += new System.EventHandler(this.btnAddNode_Click_1);
             // 
             // btnUpdateNode
             // 
@@ -141,6 +146,7 @@
             this.btnUpdateNode.TabIndex = 5;
             this.btnUpdateNode.Text = "Update Node";
             this.btnUpdateNode.UseVisualStyleBackColor = true;
+            this.btnUpdateNode.Click += new System.EventHandler(this.btnUpdateNode_Click_1);
             // 
             // btnDeleteNode
             // 
@@ -150,6 +156,7 @@
             this.btnDeleteNode.TabIndex = 5;
             this.btnDeleteNode.Text = "Delete Node";
             this.btnDeleteNode.UseVisualStyleBackColor = true;
+            this.btnDeleteNode.Click += new System.EventHandler(this.btnDeleteNode_Click_1);
             // 
             // btnAddEdge
             // 
@@ -159,6 +166,7 @@
             this.btnAddEdge.TabIndex = 5;
             this.btnAddEdge.Text = "Add Edge";
             this.btnAddEdge.UseVisualStyleBackColor = true;
+            this.btnAddEdge.Click += new System.EventHandler(this.btnAddEdge_Click_1);
             // 
             // btnDeleteEdge
             // 
@@ -168,6 +176,16 @@
             this.btnDeleteEdge.TabIndex = 5;
             this.btnDeleteEdge.Text = "Delete Edge";
             this.btnDeleteEdge.UseVisualStyleBackColor = true;
+            this.btnDeleteEdge.Click += new System.EventHandler(this.btnDeleteEdge_Click_1);
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(229, 20);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(29, 13);
+            this.label.TabIndex = 6;
+            this.label.Text = "NPC";
             // 
             // NPCDialogueForm
             // 
@@ -175,6 +193,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1284, 661);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.btnDeleteEdge);
             this.Controls.Add(this.btnAddEdge);
             this.Controls.Add(this.btnDeleteNode);
@@ -192,6 +211,7 @@
             this.Controls.Add(this.cboNPC);
             this.Name = "NPCDialogueForm";
             this.Text = "NPCDialogueForm";
+            this.Load += new System.EventHandler(this.NPCDialogueForm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEdges)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,5 +235,6 @@
         private System.Windows.Forms.Button btnDeleteNode;
         private System.Windows.Forms.Button btnAddEdge;
         private System.Windows.Forms.Button btnDeleteEdge;
+        private System.Windows.Forms.Label label;
     }
 }

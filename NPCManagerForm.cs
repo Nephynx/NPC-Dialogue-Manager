@@ -1,5 +1,4 @@
-﻿// NPCDialogueManager.App/Forms/NPCManagerForm.cs
-using NPCDialogueManager.Core.Models;
+﻿using NPCDialogueManager.Core.Models;
 using NPCDialogueManager.Core.Services;
 using NPCDialogueManager.Data.Repositories;
 using System;
@@ -41,19 +40,6 @@ namespace NPCDialogueManager.App
             SelectRowById(npc.Id);
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (dgvNPCs.CurrentRow?.DataBoundItem is NPC npc)
-            {
-                var confirm = MessageBox.Show($"Delete '{npc.Name}'?", "Confirm", MessageBoxButtons.YesNo);
-                if (confirm == DialogResult.Yes)
-                {
-                    _npcService.Delete(npc.Id);
-                    RefreshGrid();
-                }
-            }
-        }
-
         private void dgvNPCs_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvNPCs.CurrentRow?.DataBoundItem is NPC npc)
@@ -61,17 +47,6 @@ namespace NPCDialogueManager.App
                 txtName.Text = npc.Name;
                 txtDescription.Text = npc.Description;
                 chkIsActive.Checked = npc.IsActive;
-            }
-        }
-
-        private void chkIsActive_CheckedChanged(object sender, EventArgs e)
-        {
-            if (dgvNPCs.CurrentRow?.DataBoundItem is NPC npc)
-            {
-                npc.IsActive = chkIsActive.Checked;
-                _npcService.Update(npc);
-                RefreshGrid();
-                SelectRowById(npc.Id);
             }
         }
 
@@ -94,6 +69,30 @@ namespace NPCDialogueManager.App
             {
                 npc.Name = txtName.Text.Trim();
                 npc.Description = txtDescription.Text.Trim();
+                _npcService.Update(npc);
+                RefreshGrid();
+                SelectRowById(npc.Id);
+            }
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            if (dgvNPCs.CurrentRow?.DataBoundItem is NPC npc)
+            {
+                var confirm = MessageBox.Show($"Delete '{npc.Name}'?", "Confirm", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+                    _npcService.Delete(npc.Id);
+                    RefreshGrid();
+                }
+            }
+        }
+
+        private void chkIsActive_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (dgvNPCs.CurrentRow?.DataBoundItem is NPC npc)
+            {
+                npc.IsActive = chkIsActive.Checked;
                 _npcService.Update(npc);
                 RefreshGrid();
                 SelectRowById(npc.Id);

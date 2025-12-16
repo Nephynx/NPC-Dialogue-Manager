@@ -15,8 +15,8 @@ namespace NPCDialogueManager.App
             lblWelcome.Text = $"Welcome, {AppConfig.CurrentUser?.DisplayName}";
 
             lblAbout.Text = 
-                "INTRODUCTION: NPC Dialogue Manager Project\n\n" +
-                "a tool for managing how NPCs interact with players." +
+                "INTRODUCTION: \nNPC Dialogue Manager Project\n\n" +
+                "a tool for managing how NPCs interact with players. " +
                  "It lets developers create, organize, and play dialogues," +
                  "making NPC conversations dynamic and engaging. " +
                  "With the NPC Manager, Dialogue Manager," +
@@ -49,15 +49,17 @@ namespace NPCDialogueManager.App
         private void btnEditAccount_Click_1(object sender, EventArgs e)
         {
             using (var f = new AccountEditingForm()) f.ShowDialog();
-        }
-        private void btnAccounts_Click(object sender, EventArgs e)
-        {
-            using (var f = new AccountsForm()) f.ShowDialog();
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnAccounts_Click_1(object sender, EventArgs e)
+        {
+            using (var f = new AccountsForm()) f.ShowDialog();
         }
     }
 }

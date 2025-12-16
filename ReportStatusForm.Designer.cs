@@ -42,6 +42,7 @@
             this.cboNPC.Name = "cboNPC";
             this.cboNPC.Size = new System.Drawing.Size(277, 21);
             this.cboNPC.TabIndex = 0;
+            this.cboNPC.SelectedIndexChanged += new System.EventHandler(this.cboNPC_SelectedIndexChanged_1);
             // 
             // dgvSessions
             // 
@@ -58,6 +59,7 @@
             this.dgvLogs.Name = "dgvLogs";
             this.dgvLogs.Size = new System.Drawing.Size(347, 288);
             this.dgvLogs.TabIndex = 1;
+            this.dgvLogs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLogs_CellContentClick);
             // 
             // ReportStatusForm
             // 

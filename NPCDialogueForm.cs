@@ -17,22 +17,6 @@ namespace NPCDialogueManager.App
             InitializeComponent();
         }
 
-        private void NPCDialogueForm_Load(object sender, EventArgs e)
-        {
-            cboNPC.DisplayMember = "Name";
-            cboNPC.ValueMember = "Id";
-            cboNPC.DataSource = _npcRepo.GetAll().ToList();
-            lstNodes.DisplayMember = "NodeKey";
-            dgvEdges.AutoGenerateColumns = true;
-        }
-
-        private void cboNPC_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            _selectedNpc = cboNPC.SelectedItem as NPC;
-            LoadNodes();
-            ClearNodeEditor();
-        }
-
         private void LoadNodes()
         {
             if (_selectedNpc == null) return;
@@ -55,7 +39,54 @@ namespace NPCDialogueManager.App
             }
         }
 
-        private void btnAddNode_Click(object sender, EventArgs e)
+        private void SelectNodeById(int id)
+        {
+            for (int i = 0; i < lstNodes.Items.Count; i++)
+            {
+                if (lstNodes.Items[i] is DialogueNode n && n.Id == id)
+                {
+                    lstNodes.SelectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        private void ClearNodeEditor()
+        {
+            txtNodeId.Text = "";
+            txtNodeKey.Text = "";
+            txtNodeText.Text = "";
+            chkIsRoot.Checked = false;
+            dgvEdges.DataSource = null;
+        }
+
+        private void cboNPC_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            _selectedNpc = cboNPC.SelectedItem as NPC;
+            LoadNodes();
+            ClearNodeEditor();
+        }
+
+        private void txtNodeId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNodeKey_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NPCDialogueForm_Load_1(object sender, EventArgs e)
+        {
+            cboNPC.DisplayMember = "Name";
+            cboNPC.ValueMember = "Id";
+            cboNPC.DataSource = _npcRepo.GetAll().ToList();
+            lstNodes.DisplayMember = "NodeKey";
+            dgvEdges.AutoGenerateColumns = true;
+        }
+
+        private void btnAddNode_Click_1(object sender, EventArgs e)
         {
             if (_selectedNpc == null)
             {
@@ -79,7 +110,7 @@ namespace NPCDialogueManager.App
             SelectNodeById(id);
         }
 
-        private void btnUpdateNode_Click(object sender, EventArgs e)
+        private void btnUpdateNode_Click_1(object sender, EventArgs e)
         {
             if (!int.TryParse(txtNodeId.Text, out var nodeId)) return;
             var node = _dialogueRepo.GetNodeById(nodeId);
@@ -93,7 +124,7 @@ namespace NPCDialogueManager.App
             SelectNodeById(node.Id);
         }
 
-        private void btnDeleteNode_Click(object sender, EventArgs e)
+        private void btnDeleteNode_Click_1(object sender, EventArgs e)
         {
             if (!int.TryParse(txtNodeId.Text, out var nodeId)) return;
             var confirm = MessageBox.Show("Delete this node? Edges from it will be orphaned.", "Confirm", MessageBoxButtons.YesNo);
@@ -105,7 +136,7 @@ namespace NPCDialogueManager.App
             }
         }
 
-        private void btnAddEdge_Click(object sender, EventArgs e)
+        private void btnAddEdge_Click_1(object sender, EventArgs e)
         {
             if (!int.TryParse(txtNodeId.Text, out var fromId))
             {
@@ -133,7 +164,7 @@ namespace NPCDialogueManager.App
             dgvEdges.DataSource = _dialogueRepo.GetEdgesFromNode(fromId).ToList();
         }
 
-        private void btnDeleteEdge_Click(object sender, EventArgs e)
+        private void btnDeleteEdge_Click_1(object sender, EventArgs e)
         {
             if (dgvEdges.CurrentRow?.DataBoundItem is DialogueEdge edge)
             {
@@ -143,27 +174,6 @@ namespace NPCDialogueManager.App
                     dgvEdges.DataSource = _dialogueRepo.GetEdgesFromNode(fromId).ToList();
                 }
             }
-        }
-
-        private void SelectNodeById(int id)
-        {
-            for (int i = 0; i < lstNodes.Items.Count; i++)
-            {
-                if (lstNodes.Items[i] is DialogueNode n && n.Id == id)
-                {
-                    lstNodes.SelectedIndex = i;
-                    break;
-                }
-            }
-        }
-
-        private void ClearNodeEditor()
-        {
-            txtNodeId.Text = "";
-            txtNodeKey.Text = "";
-            txtNodeText.Text = "";
-            chkIsRoot.Checked = false;
-            dgvEdges.DataSource = null;
         }
     }
 }
