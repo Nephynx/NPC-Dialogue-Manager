@@ -18,8 +18,17 @@ namespace NPCDialogueManager.App
         {
             try
             {
-                _auth.Register(tbUsername.Text.Trim(), tbPassword.Text, tbDisplayName.Text.Trim());
-                MessageBox.Show("Account created. You can log in now.");
+
+                if (string.IsNullOrWhiteSpace(tbUsername.Text) || string.IsNullOrWhiteSpace(tbPassword.Text) || string.IsNullOrWhiteSpace(tbDisplayName.Text))
+                {
+                    MessageBox.Show("cannot be empty");
+
+                }
+                else
+                {
+                    _auth.Register(tbUsername.Text.Trim(), tbPassword.Text, tbDisplayName.Text.Trim());
+                    MessageBox.Show("Account created. You can log in now.");
+                }
                 this.Close();
             }
             catch (Exception ex)
