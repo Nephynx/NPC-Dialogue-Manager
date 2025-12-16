@@ -47,7 +47,6 @@ namespace NPCDialogueManager.App
                 MessageBox.Show("This NPC has no root node.");
                 return;
             }
-
             _sessionId = _sessionRepo.StartSession(_npc.Id, AppConfig.CurrentUser.Id);
             RenderNode(root);
         }
@@ -76,7 +75,26 @@ namespace NPCDialogueManager.App
             return dict;
         }
 
-        private void lstChoices_DoubleClick(object sender, EventArgs e)
+        private void btnEnd_Click_1(object sender, EventArgs e)
+        {
+            if (_sessionId > 0)
+            {
+                _sessionRepo.EndSession(_sessionId);
+                _sessionId = 0;
+            }
+            MessageBox.Show("Dialogue ended.");
+        }
+
+        private void DialoguePlayerForm_Load_1(object sender, EventArgs e)
+        {
+            cboNPC.DisplayMember = "Name";
+            cboNPC.ValueMember = "Id";
+            cboNPC.DataSource = _npcRepo.GetAll().ToList();
+            lstChoices.DisplayMember = "ChoiceText";
+        }
+
+   
+        private void lstChoices_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstChoices.SelectedItem is DialogueEdge edge)
             {
@@ -89,16 +107,6 @@ namespace NPCDialogueManager.App
                 }
                 RenderNode(next);
             }
-        }
-
-        private void btnEnd_Click(object sender, EventArgs e)
-        {
-            if (_sessionId > 0)
-            {
-                _sessionRepo.EndSession(_sessionId);
-                _sessionId = 0;
-            }
-            MessageBox.Show("Dialogue ended.");
         }
     }
 }

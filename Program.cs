@@ -1,5 +1,4 @@
-﻿using NPC_Dialogue_Manager;
-using NPCDialogueManager.Data;
+﻿using NPCDialogueManager.Data;
 using System;
 using System.Windows.Forms;
 
