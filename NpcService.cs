@@ -17,7 +17,6 @@ namespace NPCDialogueManager.Core.Services
             npc.Id = _repo.Create(npc);
             return npc;
         }
-
         public void Update(NPC npc) => _repo.Update(npc);
 
         public void Delete(int id) => _repo.Delete(id);

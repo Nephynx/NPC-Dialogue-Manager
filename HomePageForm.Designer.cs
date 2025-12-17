@@ -166,13 +166,17 @@
             // 
             // btnAccounts
             // 
-            this.btnAccounts.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccounts.BackColor = System.Drawing.Color.Transparent;
+            this.btnAccounts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccounts.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccounts.ForeColor = System.Drawing.Color.White;
             this.btnAccounts.Location = new System.Drawing.Point(11, 416);
             this.btnAccounts.Name = "btnAccounts";
             this.btnAccounts.Size = new System.Drawing.Size(214, 63);
             this.btnAccounts.TabIndex = 9;
             this.btnAccounts.Text = "Accounts";
-            this.btnAccounts.UseVisualStyleBackColor = true;
+            this.btnAccounts.UseVisualStyleBackColor = false;
             this.btnAccounts.Click += new System.EventHandler(this.btnAccounts_Click_1);
             // 
             // HomePageForm

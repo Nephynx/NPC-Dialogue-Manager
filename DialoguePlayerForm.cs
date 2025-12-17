@@ -1,10 +1,11 @@
-﻿using System;
+﻿using NPCDialogueManager.Core.DialogueEngine;
+using NPCDialogueManager.Core.Models;
+using NPCDialogueManager.Data.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using NPCDialogueManager.Core.DialogueEngine;
-using NPCDialogueManager.Core.Models;
-using NPCDialogueManager.Data.Repositories;
+using System.Xml.Linq;
 
 namespace NPCDialogueManager.App
 {
@@ -53,7 +54,6 @@ namespace NPCDialogueManager.App
 
         private void RenderNode(DialogueNode node)
         {
-            lblNpcName.Text = _npc.Name;
             txtNodeText.Text = node.Text;
             lstChoices.Items.Clear();
 
@@ -83,6 +83,9 @@ namespace NPCDialogueManager.App
                 _sessionId = 0;
             }
             MessageBox.Show("Dialogue ended.");
+            txtNodeText.Clear();
+            lstChoices.ClearSelected();
+            lblNodeId.Text = "Node Id:";
         }
 
         private void DialoguePlayerForm_Load_1(object sender, EventArgs e)

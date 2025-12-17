@@ -66,17 +66,6 @@ namespace NPCDialogueManager.App
             LoadNodes();
             ClearNodeEditor();
         }
-
-        private void txtNodeId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNodeKey_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void NPCDialogueForm_Load_1(object sender, EventArgs e)
         {
             cboNPC.DisplayMember = "Name";
